@@ -43,7 +43,7 @@ public class WatchService {
         return watchRepository.findById(id).orElseThrow(()->new NoWatchFoundException("Watch "+id+" not found"));
     }
 
-    public Watch updateVehicle(long id, WatchDTO updateWatchDto) throws NoWatchFoundException {
+    public Watch updateWatch(long id, WatchDTO updateWatchDto) throws NoWatchFoundException {
         Watch watch = findById(id);
 
         BeanUtils.copyProperties(updateWatchDto,watch);
